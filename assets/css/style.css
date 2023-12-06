@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 1px solid coral;
+}
+
+html{
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* body */
+
+.web-app{
+    height: 100vh;
+}
+
+.web-app-top{
+    height: calc(100% - 90px);
+    background-color: #141922;
+}
+
+.web-app-bottom{
+    height: 90px;
+    background-color: #282828;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* media query */
+
+/* xs */
+@media screen and (min-width: 576px;) {
+    
+}
+
+
+/* sm */
+@media screen and (min-width: 768px;) {
+    
+}
+
+/* lg */
+@media screen and (min-width: 992px;) {
+    
+}
+
