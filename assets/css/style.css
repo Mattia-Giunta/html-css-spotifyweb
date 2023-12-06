@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    border: 1px solid coral;
+    /* border: 1px solid coral; */
 }
 
 html{
@@ -15,15 +15,156 @@ html{
     height: 100vh;
 }
 
+
+/* top part */
 .web-app-top{
     height: calc(100% - 90px);
     background-color: #141922;
+    display: flex;
 }
 
+
+/* bottom part */
 .web-app-bottom{
     height: 90px;
     background-color: #282828;
 }
+
+
+/* blak sidebar */
+.sidebar{
+    background-color: black;
+    width: 50px;
+    height: 100%;
+}
+
+/* section with menu and music album */
+.section-music{
+    width: calc(100% - 50px);
+    height: 100%;
+    color: white;
+
+    padding-top: 110px;
+    padding-inline: 20px;
+    padding-bottom: 30px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    overflow: auto;
+}
+
+
+/* upper section with button */
+.section-upgrade{
+    border: 1px solid lime;
+    height: 90px;
+
+    position: fixed;
+    left: 50px;
+    top: 0;
+    right: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 20px;
+    background-color: rgba(8, 11, 18, 0.7);
+}
+
+.section-music .section-upgrade a{
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+    border: 1px solid white;
+    border-radius: 20px;
+    padding: 10px 30px;
+}
+
+
+/* music menu */
+.section-music .section-music-menu ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.section-music .section-music-menu ul li a{
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    opacity: 0.5;
+}
+
+.section-music .section-music-menu ul li a:hover{
+    opacity: 1;
+}
+
+
+
+/* reset img */
+.section-music .section-albums .disk figure img,
+.section-music .recommended .recommended-playlist figure img{
+    display: block;
+    width: 100%;
+}
+
+.section-music .popular .popular-artists figure img{
+    display: block;
+    width: 100%;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+
+
+/* section album cover */
+/* section with music recommended */
+/* section popular artists */
+.section-music .section-albums,
+.section-music .recommended,
+.section-music .popular{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.section-music .section-albums .disk,
+.section-music .recommended .recommended-playlist,
+.section-music .popular .popular-artists{
+    width: calc(100% / 2 - 5px);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+}
+    
+.section-music h3{
+    font-size: 14px;
+}
+
+.section-music .section-albums .disk span,
+.section-music p{
+    font-size: 12px;
+    opacity: 0.5;
+}
+
+.section-music .popular .popular-artists figure{
+    border-radius: 50%;
+    aspect-ratio: 1;
+}
+
+
+
+
+
+
+
 
 
 
@@ -39,18 +180,41 @@ html{
 /* media query */
 
 /* xs */
-@media screen and (min-width: 576px;) {
+@media screen and (min-width: 576px) {
+    .sidebar{
+        width: 200px;
+    } 
+    .section-upgrade{ 
+        left: 200px;
+        top: 0;
+        right: 0;
+    }
+    .section-music{
+        width: calc(100% - 200px);
+    }
     
 }
 
 
 /* sm */
-@media screen and (min-width: 768px;) {
+@media screen and (min-width: 768px) {
+    .section-music .section-albums .disk,
+    .section-music .recommended .recommended-playlist,
+    .section-music .popular .popular-artists{
+        width: calc(100% / 4 - 10px);
     
+}
 }
 
 /* lg */
-@media screen and (min-width: 992px;) {
-    
+@media screen and (min-width: 992px) {
+    .section-music .section-albums .disk,
+    .section-music .recommended .recommended-playlist,
+    .section-music .popular .popular-artists{
+        width: calc(100% / 6 - 10px);   
+    }
+    .section-music .section-albums{
+        justify-content: space-between;
+    }
 }
 
