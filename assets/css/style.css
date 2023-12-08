@@ -9,6 +9,11 @@ html{
     font-family: 'Montserrat', sans-serif;
 }
 
+a{
+    text-decoration: none;
+    color: white;
+}
+
 /* body */
 
 .web-app{
@@ -21,6 +26,7 @@ html{
     height: calc(100% - 90px);
     background-color: #141922;
     display: flex;
+    overflow: hidden;
 }
 
 
@@ -31,12 +37,91 @@ html{
 }
 
 
-/* blak sidebar */
+/* black sidebar */
 .sidebar{
     background-color: black;
     width: 50px;
     height: 100%;
+    overflow: hidden;
 }
+
+.sidebar .sidebar-top{
+    height: calc(100% - 80px);
+    gap: 10px;
+    min-height: 400px;
+}
+
+.sidebar .sidebar-top #logo{
+    height: 25px;
+    margin-top: 10px;
+}
+
+.sidebar .sidebar-top #logo-normal{
+    display: none;
+    margin-top: 10px;
+}
+
+.sidebar .sidebar-top nav ul{
+    list-style-type: none;
+}
+
+.sidebar .sidebar-top nav ul li a{
+    display: none;
+}
+
+.sidebar .sidebar-top nav ul li:first-child a,
+.sidebar .sidebar-top nav ul li:first-child svg{
+    opacity: 1;
+}
+
+.sidebar .sidebar-top,
+.sidebar .sidebar-bottom{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar .sidebar-top .palylist{
+    display: none;
+}
+
+.sidebar .sidebar-top h4{
+    display: none;
+}
+
+.sidebar .sidebar-bottom{
+    justify-content: space-evenly;
+    height: 80px;
+}
+
+.sidebar .sidebar-top nav svg,
+.sidebar .sidebar-bottom svg{
+    height: 25px;
+    opacity: 0.5;
+}
+
+.sidebar .sidebar-bottom a{
+    font-size: 12px;
+}
+
+.sidebar .sidebar-bottom a:first-child{
+    opacity: 0.5;
+}
+
+.sidebar .sidebar-bottom a:last-child svg{
+    background-color: gray;
+    border-radius: 50%;
+    aspect-ratio: 1;
+}
+
+.sidebar .sidebar-bottom a span,
+.sidebar .sidebar-bottom hr{
+    display: none;
+}
+
+
+
+
 
 /* section with menu and music album */
 .section-music{
@@ -58,7 +143,7 @@ html{
 
 /* upper section with button */
 .section-upgrade{
-    border: 1px solid lime;
+    /* border: 1px solid lime; */
     height: 90px;
 
     position: fixed;
@@ -143,7 +228,7 @@ html{
     gap: 10px;
     text-align: center;
 }
-    
+
 .section-music h3{
     font-size: 14px;
 }
@@ -181,10 +266,94 @@ html{
 
 /* xs */
 @media screen and (min-width: 576px) {
+    /* sidebar */
     .sidebar{
         width: 200px;
-    } 
-    .section-upgrade{ 
+    }
+    .sidebar .sidebar-top #logo{
+        display: none;
+    }
+    .sidebar .sidebar-top nav ul{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .sidebar .sidebar-top nav{
+        margin-top: 20px;
+    }
+    .sidebar .sidebar-top nav ul li{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .sidebar .sidebar-top,
+    .sidebar .sidebar-bottom{
+        align-items: flex-start;
+        padding-inline: 20px;
+        overflow: hidden;
+    }
+    .sidebar .sidebar-top #logo-normal{
+        display: block;
+        min-height: 40px;
+        max-height: 40px;
+    }
+    .sidebar .sidebar-top nav ul li a{
+        display: block;
+        opacity: 0.5;
+        font-size: 12px;
+    }
+    .sidebar .sidebar-top h4{
+        display: block;
+        color: white;
+        text-transform: uppercase;
+        font-size: 14px;
+        margin-block: 10px;
+    }
+    .sidebar .sidebar-top .palylist{
+        display: block;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        overflow: auto;
+        width: 100%;
+    }  
+    .sidebar .sidebar-top .palylist li a{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        opacity: 0.5;
+        font-size: 12px;
+    }
+    .sidebar .sidebar-top .palylist li a span{
+        background-color: gray;
+        display: inline-block;
+        font-size: 40px;
+        font-weight: bold;
+        color: black;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+    }
+    .sidebar .sidebar-bottom hr{
+        width: 100%;
+        opacity: 0.5;
+    }
+    .sidebar .sidebar-bottom a{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .sidebar .sidebar-bottom a span,
+    .sidebar .sidebar-bottom hr{
+        display: block;
+    }
+
+
+
+    
+
+    .section-upgrade{
         left: 200px;
         top: 0;
         right: 0;
@@ -192,7 +361,8 @@ html{
     .section-music{
         width: calc(100% - 200px);
     }
-    
+
+
 }
 
 
@@ -202,7 +372,7 @@ html{
     .section-music .recommended .recommended-playlist,
     .section-music .popular .popular-artists{
         width: calc(100% / 4 - 10px);
-    
+
 }
 }
 
@@ -211,7 +381,7 @@ html{
     .section-music .section-albums .disk,
     .section-music .recommended .recommended-playlist,
     .section-music .popular .popular-artists{
-        width: calc(100% / 6 - 10px);   
+        width: calc(100% / 6 - 10px);
     }
     .section-music .section-albums{
         justify-content: space-between;
