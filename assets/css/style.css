@@ -30,11 +30,7 @@ a{
 }
 
 
-/* bottom part */
-.web-app-bottom{
-    height: 90px;
-    background-color: #282828;
-}
+
 
 
 /* black sidebar */
@@ -245,14 +241,114 @@ a{
 }
 
 
+/* bottom part */
+.web-app-bottom{
+    height: 90px;
+    background-color: #282828;
+    display: flex;
+    align-items: center;
+}
+
+.web-app-bottom .player-left,
+.web-app-bottom .player-center,
+.web-app-bottom .player-right{  
+    flex-basis: calc(100% / 3);
+}
+
+.web-app-bottom .player-left{
+    /* flex-basis: 30%; */
+    padding-inline: 10px;
+}
+
+.web-app-bottom .player-center{
+    flex-basis: 60%;
+    display: flex;
+    flex-direction: column;
+    padding-inline: 10px;
+    gap: 15px;
+
+}
+
+.web-app-bottom .player-right{
+    /* flex-basis: 30%; */
+    padding-inline: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.web-app-bottom .player-left ul{
+    list-style: none;
+    display: flex;
+    align-items: center; 
+    gap: 10px;  
+    
+}
+
+.web-app-bottom .player-left ul li #song-name{
+    display: flex;  
+    flex-direction: column; 
+}
+
+.web-app-bottom .player-left ul li a span{
+    font-size: 10px;   
+}
 
 
 
+.web-app-bottom .player-left ul li a img{
+    width: 30px;
+    display: block;
+    object-fit: contain;
+    aspect-ratio: 1;
+    margin: 0 auto;
+}
 
+.web-app-bottom .player-center div ul{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 200px;
+    margin: 0 auto;
+} 
 
+.web-app-bottom .player-center div ul li #play-logo{
+    font-size: 20px;
+    padding: 2px 6px;
+    border: 3px solid white;
+    border-radius: 50%;
+} 
 
+.web-app-bottom .player-center .bar-palyer-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    gap: 20px;
+    font-size: 12px;
+} 
 
+.web-app-bottom .player-center .bar-palyer-container .bar-player{
+    background-color: white;
+    width: 60%;
+    border: 2px solid gray;
+    border-radius: 10px;
+} 
 
+.player-right div ul{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    max-width: 300px;
+}
+
+.player-right div ul li:last-child{
+    border: 2px solid gray;
+    border-radius: 10px;
+    width: 60px;
+}
 
 
 
@@ -349,15 +445,14 @@ a{
         display: block;
     }
 
-
-
-    
-
+    /* upper section with button */
     .section-upgrade{
         left: 200px;
         top: 0;
         right: 0;
     }
+
+    /* section with menu and music album */
     .section-music{
         width: calc(100% - 200px);
     }
@@ -388,3 +483,4 @@ a{
     }
 }
 
+/* Terminato esrecizio */
